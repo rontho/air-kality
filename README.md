@@ -1,2 +1,2 @@
 # air-kality
-Source code for Kotlin article
+Code source lié à l'article sur : "Commencer le Kotlin avec Android"
