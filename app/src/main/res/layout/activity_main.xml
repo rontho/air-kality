@@ -6,42 +6,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.splashcode.airkality.presentation.MainActivity">
+    tools:context="com.splashcode.airkality.presentation.airquality.AirQualityActivity">
 
     <TextView
-        android:id="@+id/mainActivityUserLocation"
+        android:id="@+id/userLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:hint="Location"
-        app:layout_constraintLeft_toLeftOf="parent"
+        tools:hint="Location"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/mainActivityAirQualityValue"
+        android:id="@+id/airQualityValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:hint="Air Quality"
-        app:layout_constraintRight_toRightOf="parent"
+        tools:hint="Air Quality"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
         tools:ignore="RtlHardcoded"
+        android:textSize="62sp"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteY="16dp"/>
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/airQualityDesc"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        tools:hint="Good"
+        app:layout_constraintTop_toBottomOf="@id/airQualityValue"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        tools:ignore="RtlHardcoded"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteY="16dp"/>
 
 </android.support.constraint.ConstraintLayout>
