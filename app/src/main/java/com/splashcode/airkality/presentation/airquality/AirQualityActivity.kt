@@ -1,8 +1,6 @@
 package com.splashcode.airkality.presentation.airquality
 
-import android.content.res.Resources
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import com.splashcode.airkality.R
@@ -18,8 +16,10 @@ class AirQualityActivity : AppCompatActivity(), AirQualityContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        swipeToRefresh.setOnRefreshListener { getAirQuality() }
+
         presenter.init(this)
-        presenter.getAirQuality()
+        getAirQuality()
     }
 
     override fun onResume() {
@@ -27,9 +27,16 @@ class AirQualityActivity : AppCompatActivity(), AirQualityContract.View {
     }
 
     override fun bind(model: AirQualityViewModel) {
-        container.backgroundColor = ContextCompat.getColor(this, model.colorResId)
-        userLocation.text = model.location
-        airQualityValue.text = model.quality
-        airQualityDesc.text = getString(model.informationMessage)
+        model.apply {
+            container.backgroundColor = ContextCompat.getColor(container.context, colorResId)
+            userLocation.text = location
+            airQualityValue.text = quality
+            airQualityDesc.text = getString(informationMessage)
+            swipeToRefresh.isRefreshing = false
+        }
+    }
+
+    private fun getAirQuality() {
+        presenter.getAirQuality()
     }
 }

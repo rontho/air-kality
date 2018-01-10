@@ -4,14 +4,14 @@ import com.google.gson.Gson
 import com.splashcode.airkality.data.http.response.AirQualityResponse
 import java.net.URL
 
-class AirQualityRequest {
+class AirQualityRequest(val apiKey: String) {
     companion object {
         @JvmStatic
-        private val URL = "http://api.airvisual.com/v2/nearest_city?lat=43.525275&lon=5.335318&key=WMR536jHMy8ESh5Pf"
+        private val BASE_URL = "http://api.airvisual.com/v2/nearest_city?"
     }
 
-    fun run (): AirQualityResponse? {
-        val response = URL(URL).readText()
+    fun run(latitude: String, longitude: String): AirQualityResponse? {
+        val response = URL(BASE_URL + "lat=${latitude}&lon=${longitude}&key=${apiKey}").readText()
         val airQualityResponse = Gson().fromJson(response, AirQualityResponse::class.java)
         return airQualityResponse
     }

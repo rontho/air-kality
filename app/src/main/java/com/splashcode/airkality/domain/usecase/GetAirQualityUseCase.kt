@@ -8,8 +8,8 @@ class GetAirQualityUseCase(private val datasource: Datasource) : AbstractUseCase
     fun execute(uiCallback: (AirQuality) -> Unit) {
         super.run( {
 
-            //TODO locationProvider.getLocation
-            datasource.getAirQuality()
+            val userLocation = datasource.getCurrentLocation()
+            datasource.getAirQuality(userLocation.latitude, userLocation.longitude)
 
         }, { airQuality ->
             uiCallback(airQuality)
