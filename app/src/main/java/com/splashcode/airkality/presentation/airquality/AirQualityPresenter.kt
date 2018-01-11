@@ -37,7 +37,7 @@ class AirQualityPresenter(private val getAirQualityUseCase: GetAirQualityUseCase
                 }
 
                 val airQualityViewModel = AirQualityViewModel(it.location, it.quality.toString(), colorResId, stringResId)
-                view.bind(airQualityViewModel)
+                view.bindViewModel(airQualityViewModel)
             }
         })
     }

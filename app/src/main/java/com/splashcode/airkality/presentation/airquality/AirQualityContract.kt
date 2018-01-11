@@ -6,7 +6,7 @@ import android.support.annotation.StringRes
 interface AirQualityContract {
 
     interface View {
-        fun bind(model: AirQualityViewModel)
+        fun bindViewModel(model: AirQualityViewModel)
     }
 
     interface Presenter<T : View> {
