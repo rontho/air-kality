@@ -10,7 +10,7 @@ class UserLocationProvider(val context: Context) {
     @SuppressLint("MissingPermission")
     fun get(): UserLocation {
         var userLocation = UserLocation()
-        val locationManager = LocationServices.getFusedLocationProviderClient(context);
+        val locationManager = LocationServices.getFusedLocationProviderClient(context)
 
         locationManager?.lastLocation?.addOnSuccessListener {
                 location -> location?.let {

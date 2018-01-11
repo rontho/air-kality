@@ -1,15 +1,12 @@
 <resources>
     <string name="app_name">AirKality</string>
-    <string name="title_home">Current Location</string>
-    <string name="title_dashboard">Favorite</string>
-    <string name="title_notifications">Settings</string>
 
-    <string name="good">Good</string>
-    <string name="moderate">Moderate</string>
-    <string name="slightly_unhealthy">Unhealthy for sensitive groups</string>
-    <string name="unhealthy">Unhealthy</string>
-    <string name="highly_unhealthy">Highly unhealthy</string>
-    <string name="hazardous">Hazardous</string>
-    <string name="unknown">Unknow</string>
+    <string name="good">Très bon</string>
+    <string name="moderate">Bon</string>
+    <string name="slightly_unhealthy">Moyen</string>
+    <string name="unhealthy">Médiocre</string>
+    <string name="highly_unhealthy">Mauvais</string>
+    <string name="hazardous">Très mauvais</string>
+    <string name="unknown">Non précisé</string>
 
 </resources>

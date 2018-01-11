@@ -34,10 +34,10 @@ class AirQualityActivity : AppCompatActivity(), AirQualityContract.View {
 
     override fun bindViewModel(model: AirQualityViewModel) {
         model.apply {
-            container.backgroundColor = ContextCompat.getColor(container.context, colorResId)
+            container.backgroundColor = ContextCompat.getColor(container.context, type.color)
             userLocation.text = location
             airQualityValue.text = quality
-            airQualityDesc.text = getString(informationMessage)
+            airQualityDesc.text = getString(type.message)
             swipeToRefresh.isRefreshing = false
         }
     }
@@ -63,6 +63,6 @@ class AirQualityActivity : AppCompatActivity(), AirQualityContract.View {
     }
 
     private fun getAirQuality() {
-        checkPermissions( { presenter.getAirQuality() })
+        checkPermissions( { presenter.getAirQuality() } )
     }
 }

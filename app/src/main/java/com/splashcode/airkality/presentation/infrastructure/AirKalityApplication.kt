@@ -2,7 +2,6 @@ package com.splashcode.airkality.presentation.infrastructure
 
 import android.app.Activity
 import android.app.Application
-import android.location.LocationProvider
 import android.widget.Toast
 import com.splashcode.airkality.data.AirQualityDatasource
 import com.splashcode.airkality.data.http.request.AirQualityRequest
