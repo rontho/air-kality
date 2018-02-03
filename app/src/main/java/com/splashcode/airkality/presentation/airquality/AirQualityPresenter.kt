@@ -4,7 +4,7 @@ import com.splashcode.airkality.domain.usecase.GetAirQualityUseCase
 
 class AirQualityPresenter(private val getAirQualityUseCase: GetAirQualityUseCase) : AirQualityContract.Presenter<AirQualityContract.View> {
 
-    lateinit var view: AirQualityContract.View
+    private lateinit var view: AirQualityContract.View
 
     override fun init(view: AirQualityContract.View) {
         this.view = view

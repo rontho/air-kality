@@ -9,6 +9,7 @@ import com.splashcode.airkality.data.location.UserLocationProvider
 import com.splashcode.airkality.domain.Datasource
 import com.splashcode.airkality.domain.usecase.GetAirQualityUseCase
 import com.splashcode.airkality.presentation.airquality.AirQualityPresenter
+import com.splashcode.airkality.presentation.airquality.FirstAirQualityPresenter
 import com.splashcode.airkality.presentation.infrastructure.AirKalityApplication.Companion.API_KEY
 import org.koin.android.ext.android.startKoin
 import org.koin.dsl.module.Module
@@ -32,8 +33,7 @@ val myModule : Module = applicationContext {
     provide<Datasource> { AirQualityDatasource(get(), get()) }
     provide { UserLocationProvider(get()) }
     provide { AirQualityRequest(API_KEY) }
-    provide { GetAirQualityUseCase(get()) }
-    provide { AirQualityPresenter(get()) }
+    provide { FirstAirQualityPresenter(get(), get()) }
 }
 
 fun Activity.makeToast(message: String) {
