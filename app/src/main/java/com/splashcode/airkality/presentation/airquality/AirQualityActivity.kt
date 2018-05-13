@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import com.splashcode.airkality.R
 import com.splashcode.airkality.presentation.infrastructure.makeToast
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.backgroundDrawable
 import org.koin.android.ext.android.inject
 
 
@@ -31,14 +31,14 @@ class AirQualityActivity : AppCompatActivity(), AirQualityContract.View {
         getAirQuality()
     }
 
-
     override fun bindViewModel(model: AirQualityViewModel) {
         model.apply {
-            container.backgroundColor = ContextCompat.getColor(container.context, type.color)
+            container.backgroundDrawable = ContextCompat.getDrawable(container.context, type.backgroundDrawable)
             userLocation.text = location
             airQualityValue.text = quality
             airQualityDesc.text = getString(type.message)
             swipeToRefresh.isRefreshing = false
+            window.statusBarColor = ContextCompat.getColor(container.context, type.color)
         }
     }
 

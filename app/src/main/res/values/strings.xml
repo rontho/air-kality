@@ -8,5 +8,7 @@
     <string name="highly_unhealthy">Mauvais</string>
     <string name="hazardous">Très mauvais</string>
     <string name="unknown">Non précisé</string>
+    <string name="air_quality_unit">µg/m³</string>
+    <string name="air_quality_label">Qualité de l\'air</string>
 
 </resources>

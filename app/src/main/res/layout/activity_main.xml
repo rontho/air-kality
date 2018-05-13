@@ -1,61 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v4.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeToRefresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/air_quality_good_background">
 
     <android.support.constraint.ConstraintLayout
-    android:id="@+id/container"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:context="com.splashcode.airkality.presentation.airquality.AirQualityActivity">
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.splashcode.airkality.presentation.airquality.AirQualityActivity">
+        <TextView
+            android:id="@+id/userLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:hint="Location"
+            style="@style/TextSecondary" />
 
-    <TextView
-        android:id="@+id/userLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        tools:hint="Location"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/airQualityTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/air_quality_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/airQualityValue"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:ignore="RtlHardcoded"
+            style="@style/TextTertiary" />
 
-    <TextView
-        android:id="@+id/airQualityValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        tools:hint="Air Quality"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        tools:ignore="RtlHardcoded"
-        android:textSize="62sp"
-        android:textColor="@android:color/white"
-        tools:layout_editor_absoluteY="16dp"/>
+        <TextView
+            android:id="@+id/airQualityDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/airQualityTitle"
+            tools:hint="Good"
+            tools:ignore="RtlHardcoded"
+            android:textStyle="bold"
+            style="@style/TextSecondary"/>
 
-    <TextView
-        android:id="@+id/airQualityDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        tools:hint="Good"
-        app:layout_constraintTop_toBottomOf="@id/airQualityValue"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        tools:ignore="RtlHardcoded"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
-        tools:layout_editor_absoluteY="16dp"/>
+        <TextView
+            android:id="@+id/airQualityValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:hint="Air Quality"
+            tools:ignore="RtlHardcoded"
+            android:text="456"
+            style="@style/TextPrimary" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/airQualityUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/airQualityValue"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/air_quality_unit"
+            tools:ignore="RtlHardcoded"
+            style="@style/TextSecondary"/>
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v4.widget.SwipeRefreshLayout>

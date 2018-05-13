@@ -4,10 +4,21 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="good">#95C83B</color>
-    <color name="moderate">#FFF430</color>
-    <color name="slightly_unhealthy">#920039</color>
-    <color name="unhealthy">#EA001F</color>
-    <color name="highly_unhealthy">#920039</color>
-    <color name="hazardous">#760A17</color>
+
+    <color name="unknown_start">#b2e4ea</color>
+    <color name="unknown_end">#73a8c0</color>
+    <color name="good_start">#9AE89A</color>
+    <color name="good_end">#57C06C</color>
+    <color name="moderate_start">#e8e89a</color>
+    <color name="moderate_end">#c0bd57</color>
+    <color name="slightly_unhealty_start">#FFCC80</color>
+    <color name="slightly_unhealty_end">#EF6C00</color>
+    <color name="unhealthy_start">#E24D55</color>
+    <color name="unhealthy_end">#7F1C42</color>
+    <color name="highly_unhealthy_start">#cf474f</color>
+    <color name="highly_unhealthy_end">#823151</color>
+    <color name="hazardous_start">#DF706D</color>
+    <color name="hazardous_end">#59132e</color>
+
+
 </resources>
