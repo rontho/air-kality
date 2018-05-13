@@ -34,6 +34,8 @@ val myModule : Module = applicationContext {
     provide { UserLocationProvider(get()) }
     provide { AirQualityRequest(API_KEY) }
     provide { FirstAirQualityPresenter(get(), get()) }
+    provide { AirQualityPresenter(get()) }
+    provide { GetAirQualityUseCase(get()) }
 }
 
 fun Activity.makeToast(message: String) {

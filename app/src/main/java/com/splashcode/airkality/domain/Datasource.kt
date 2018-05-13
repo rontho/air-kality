@@ -6,5 +6,4 @@ import com.splashcode.airkality.domain.model.UserLocation
 interface Datasource {
     fun getAirQuality(latitude: String, longitude: String): AirQuality
     fun getCurrentLocation(): UserLocation
-
 }
